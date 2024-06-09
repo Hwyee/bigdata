@@ -30,7 +30,7 @@ public class LengthDemo extends GenericUDF {
         log.info("arguments[0] = " + arguments[0]);
         log.info("arguments[0].getCategory() = " + arguments[0].getCategory());
         log.info("arguments[0].getTypeName() = " + arguments[0].getTypeName());
-        PrimitiveObjectInspector poi =  (PrimitiveObjectInspector)arguments[0];
+        PrimitiveObjectInspector poi = (PrimitiveObjectInspector) arguments[0];
         if (poi.getPrimitiveCategory() != PrimitiveObjectInspector.PrimitiveCategory.STRING) {
             throw new UDFArgumentException("LengthDemo only takes string type, got " + poi.getTypeName());
         }
@@ -41,29 +41,34 @@ public class LengthDemo extends GenericUDF {
     /**
      * evaluate:
      * 每行都会调用这个方法
-     * @author hui
-     * @version 1.0
+     *
      * @param arguments
      * @return java.lang.Object
+     * @author hui
+     * @version 1.0
      * @date 2024/6/9 21:56
      */
     @Override
     public Object evaluate(DeferredObject[] arguments) throws HiveException {
         if (arguments[0] != null) {
             DeferredObject o = arguments[0];
-            String str = o.toString();
+            if (o.get() == null) {
+                return 0;
+            }
+            String str = o.get().toString();
             return str.length();
         }
-        return null;
+        return 0;
     }
 
     /**
      * getDisplayString:
      * 输入explain plan时，会调用该方法
-     * @author hui
-     * @version 1.0
+     *
      * @param children
      * @return java.lang.String
+     * @author hui
+     * @version 1.0
      * @date 2024/6/9 21:56
      */
     @Override
