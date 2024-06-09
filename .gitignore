@@ -31,3 +31,8 @@ build
 
 #.idea
 .idea
+
+#dbeaver
+.project
+.dbeaver
+Scripts
