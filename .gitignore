@@ -36,3 +36,9 @@ build
 .project
 .dbeaver
 Scripts
+testrddout
+
+#kyro
+spark/java.bin
+spark/file.bin
+spark/spark

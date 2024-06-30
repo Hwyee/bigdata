@@ -1,0 +1,28 @@
+Hadoop Spark Hive
+Java Python
+C# C++
+C C++
+PHP
+Ruby
+Go
+JavaScript
+HTML
+CSS
+SQL
+Swift
+Objective-C
+Perl
+R
+MATLAB
+Scala
+Kotlin
+Groovy
+Rust
+Dart
+Clojure
+Elixir
+Erlang
+Haskell
+Lua
+PHP
+R

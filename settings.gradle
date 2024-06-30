@@ -16,4 +16,5 @@ rootProject.name = 'bigdata'
 include('hdfs')
 include 'mapred'
 include 'hive'
+include 'spark'
 

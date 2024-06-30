@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+}
+
+group = 'cn.hwyee'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    mavenCentral()
+}
+
+
+
+dependencies {
+// https://mvnrepository.com/artifact/org.apache.spark/spark-core
+    implementation group: 'org.apache.spark', name: 'spark-core_2.13', version: '3.5.1'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    // https://mvnrepository.com/artifact/com.esotericsoftware/kryo
+    implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.6.0'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+tasks.withType(JavaExec).configureEach {
+    jvmArgs = ['--add-opens=java.base/java.lang=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.lang.invoke=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.lang.reflect=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.io=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.net=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.nio=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.util=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.util.concurrent=ALL-UNNAMED' ,
+               '--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED' ,
+               '--add-opens=java.base/sun.nio.ch=ALL-UNNAMED' ,
+               '--add-opens=java.base/sun.nio.cs=ALL-UNNAMED' ,
+               '--add-opens=java.base/sun.security.action=ALL-UNNAMED' ,
+               '--add-opens=java.base/sun.util.calendar=ALL-UNNAMED']
+}
+
+test {
+    jvmArgs '--add-opens=java.base/java.lang=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.lang.invoke=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.lang.reflect=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.io=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.net=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.nio=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.util=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.util.concurrent=ALL-UNNAMED' ,
+            '--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED' ,
+            '--add-opens=java.base/sun.nio.ch=ALL-UNNAMED' ,
+            '--add-opens=java.base/sun.nio.cs=ALL-UNNAMED' ,
+            '--add-opens=java.base/sun.security.action=ALL-UNNAMED' ,
+            '--add-opens=java.base/sun.util.calendar=ALL-UNNAMED'
+
+    useJUnitPlatform()
+}
