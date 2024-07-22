@@ -1,5 +1,6 @@
 package cn.hwyee.rdd;
 
+import cn.hwyee.util.SparkUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;

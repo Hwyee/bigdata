@@ -13,8 +13,22 @@ repositories {
 
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10
+    implementation group: 'org.apache.spark', name: 'spark-streaming-kafka-0-10_2.13', version: '3.5.1'
+
+    // https://mvnrepository.com/artifact/org.apache.spark/spark-streaming
+    implementation group: 'org.apache.spark', name: 'spark-streaming_2.13', version: '3.5.1'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+
+    // https://mvnrepository.com/artifact/org.apache.spark/spark-hive
+    implementation group: 'org.apache.spark', name: 'spark-hive_2.13', version: '3.5.1'
+
 // https://mvnrepository.com/artifact/org.apache.spark/spark-core
     implementation group: 'org.apache.spark', name: 'spark-core_2.13', version: '3.5.1'
+    implementation group: 'org.apache.spark', name: 'spark-sql_2.13', version: '3.5.1'
+
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     // https://mvnrepository.com/artifact/com.esotericsoftware/kryo

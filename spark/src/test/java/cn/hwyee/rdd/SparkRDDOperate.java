@@ -1,5 +1,6 @@
 package cn.hwyee.rdd;
 
+import cn.hwyee.util.SparkUtil;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import scala.Tuple2;
-import scala.Tuple22;
 
 import java.util.Arrays;
 import java.util.List;
